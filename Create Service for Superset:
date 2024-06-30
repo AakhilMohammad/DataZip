@@ -1,0 +1,13 @@
+# superset-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: superset
+  namespace: analytics
+spec:
+  type: NodePort
+  ports:
+  - port: 8088
+    nodePort: 30080
+  selector:
+    app: superset
